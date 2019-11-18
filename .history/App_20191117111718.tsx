@@ -18,7 +18,7 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {NavigationNativeContainer} from '@react-navigation/native';
+import {NavigatonNativeContainer} from '@react-navigation/native';
 
 import styled from 'styled-components/native';
 
@@ -32,9 +32,9 @@ const Title = styled.Text`
 type PageOneProps = {};
 const PageOne: FunctionComponent<PageOneProps> = () => {
   return (
-    <NavigationNativeContainer>
+    <NavigatonNativeContainer>
       <Title>Search for houses to buy!</Title>
-    </NavigationNativeContainer>
+    </NavigatonNativeContainer>
   );
 };
 
