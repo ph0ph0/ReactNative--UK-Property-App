@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, { Fragment, FunctionComponent } from "react";
+import React, {Fragment, FunctionComponent} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,13 +16,11 @@ import {
   View,
   Text,
   StatusBar,
-} from "react-native";
+} from 'react-native';
 
-import { NavigationNativeContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import "react-native-gesture-handler";
+import {NavigationNativeContainer} from '@react-navigation/native';
 
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 const Title = styled.Text`
   font-size: 18;
@@ -33,19 +31,17 @@ const Title = styled.Text`
 
 type PageOneProps = {};
 const PageOne: FunctionComponent<PageOneProps> = () => {
-  return <Title>Search for houses to buy!</Title>;
+  return (
+    <NavigationNativeContainer>
+      <Title>Search for houses to buy!</Title>
+    </NavigationNativeContainer>
+  );
 };
-
-const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <SafeAreaView>
-      <NavigationNativeContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={PageOne} />
-        </Stack.Navigator>
-      </NavigationNativeContainer>
+      <PageOne />
     </SafeAreaView>
   );
 };
