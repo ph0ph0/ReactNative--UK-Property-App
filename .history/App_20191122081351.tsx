@@ -40,27 +40,20 @@ function HomeScreen({ navigation }) {
       <Title>Home Screen Cunt Face</Title>
       <Button
         title="Go to Detail Screen"
-        onPress={() =>
-          navigation.navigate("Detail", {
-            itemId: 21,
-            itemContent: "This is some content for the detail screen",
-          })
-        }
+        onPress={() => navigation.navigate("Detail")}
       />
     </View>
   );
 }
 
-const DetailScreen = ({ navigation, route }) => {
-  const { itemId } = route.params;
-  const { itemContent } = route.params;
-
+const DetailScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Title>Detail Screen U bellend</Title>
-      <Text>{itemId}</Text>
-      <Text>{itemContent}</Text>
-      <Button title="Force go back" onPress={() => navigation.popToTop()} />
+      <Title>Detail Screen U KNOB</Title>
+      <Button
+        title="Go to me again"
+        onPress={() => navigation.push("Detail")}
+      />
     </View>
   );
 };

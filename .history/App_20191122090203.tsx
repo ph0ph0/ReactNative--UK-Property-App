@@ -52,8 +52,8 @@ function HomeScreen({ navigation }) {
 }
 
 const DetailScreen = ({ navigation, route }) => {
-  const { itemId } = route.params;
-  const { itemContent } = route.params;
+  const itemId = route.itemId;
+  const itemContent = route.itemContent;
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>

@@ -52,12 +52,12 @@ function HomeScreen({ navigation }) {
 }
 
 const DetailScreen = ({ navigation, route }) => {
-  const { itemId } = route.params;
-  const { itemContent } = route.params;
+  const itemId = route.itemId;
+  const itemContent = route.itemContent;
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Title>Detail Screen U bellend</Title>
+      <Title>Detail Screen U KNOB</Title>
       <Text>{itemId}</Text>
       <Text>{itemContent}</Text>
       <Button title="Force go back" onPress={() => navigation.popToTop()} />

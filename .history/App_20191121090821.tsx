@@ -21,8 +21,6 @@ import {
 
 import { NavigationNativeContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RouteProp } from "@react-navigation/core";
 import "react-native-gesture-handler";
 
 import styled from "styled-components/native";
@@ -40,27 +38,19 @@ function HomeScreen({ navigation }) {
       <Title>Home Screen Cunt Face</Title>
       <Button
         title="Go to Detail Screen"
-        onPress={() =>
-          navigation.navigate("Detail", {
-            itemId: 21,
-            itemContent: "This is some content for the detail screen",
-          })
-        }
+        onPress={() => navigation.navigate("Detail")}
       />
     </View>
   );
 }
 
-const DetailScreen = ({ navigation, route }) => {
-  const { itemId } = route.params;
-  const { itemContent } = route.params;
-
+const DetailScreen = () => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Title>Detail Screen U bellend</Title>
-      <Text>{itemId}</Text>
-      <Text>{itemContent}</Text>
-      <Button title="Force go back" onPress={() => navigation.popToTop()} />
+    <View>
+      <Title
+        style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        Detail Screen U KNOB
+      </Title>
     </View>
   );
 };
