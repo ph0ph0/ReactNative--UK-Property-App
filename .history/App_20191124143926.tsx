@@ -66,23 +66,6 @@ const DetailScreen = ({ navigation, route }) => {
   );
 };
 
-function OtherHomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Title>OTHER Home Screen Cunt Face</Title>
-      <Button
-        title="Go to Detail Screen"
-        onPress={() =>
-          navigation.navigate("Detail", {
-            itemId: 21,
-            itemContent: "This is some content for the detail screen",
-          })
-        }
-      />
-    </View>
-  );
-}
-
 const Stack = createStackNavigator();
 
 const StackNav = () => {
@@ -94,15 +77,6 @@ const StackNav = () => {
   );
 };
 
-const OtherStackNav = () => {
-  return (
-    <Stack.Navigator initialRouteName="OtherHome">
-      <Stack.Screen name="OtherHome" component={OtherHomeScreen} />
-      <Stack.Screen name="DetailTwo" component={DetailScreen} />
-    </Stack.Navigator>
-  );
-};
-
 const Tab = createBottomTabNavigator();
 
 const App = () => {
@@ -110,7 +84,7 @@ const App = () => {
     <NavigationNativeContainer>
       <Tab.Navigator>
         <Tab.Screen name="StackNav" component={StackNav} />
-        <Tab.Screen name="StackNav2" component={OtherStackNav} />
+        <Tab.Screen name="StackNav2" component={StackNav} />
       </Tab.Navigator>
     </NavigationNativeContainer>
   );

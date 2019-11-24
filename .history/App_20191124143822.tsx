@@ -22,7 +22,7 @@ import {
 import { NavigationNativeContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/core";
 import "react-native-gesture-handler";
 
@@ -66,26 +66,9 @@ const DetailScreen = ({ navigation, route }) => {
   );
 };
 
-function OtherHomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Title>OTHER Home Screen Cunt Face</Title>
-      <Button
-        title="Go to Detail Screen"
-        onPress={() =>
-          navigation.navigate("Detail", {
-            itemId: 21,
-            itemContent: "This is some content for the detail screen",
-          })
-        }
-      />
-    </View>
-  );
-}
-
 const Stack = createStackNavigator();
 
-const StackNav = () => {
+const Stack = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />
@@ -94,23 +77,14 @@ const StackNav = () => {
   );
 };
 
-const OtherStackNav = () => {
-  return (
-    <Stack.Navigator initialRouteName="OtherHome">
-      <Stack.Screen name="OtherHome" component={OtherHomeScreen} />
-      <Stack.Screen name="DetailTwo" component={DetailScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const Tab = createBottomTabNavigator();
+const Tab = createTabNavigator();
 
 const App = () => {
   return (
     <NavigationNativeContainer>
       <Tab.Navigator>
-        <Tab.Screen name="StackNav" component={StackNav} />
-        <Tab.Screen name="StackNav2" component={OtherStackNav} />
+        <Tab.Screen name="Stack" component={Stack} />
+        <Tab.Screen name="Stack2" component={Stack} />
       </Tab.Navigator>
     </NavigationNativeContainer>
   );
