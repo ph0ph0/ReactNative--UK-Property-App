@@ -81,7 +81,7 @@ function OtherHomeScreen({ navigation }) {
       />
       <Button
         title="Nav to other stack"
-        onPress={() => navigation.navigate("StackNav", { screen: "Detail" })}
+        onPress={() => navigation.navigate("Home", { screen: "Detail" })}
       />
     </View>
   );
