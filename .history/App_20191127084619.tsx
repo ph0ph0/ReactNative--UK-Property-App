@@ -62,10 +62,6 @@ const DetailScreen = ({ navigation, route }) => {
       <Text>{itemId}</Text>
       <Text>{itemContent}</Text>
       <Button title="Force go back" onPress={() => navigation.popToTop()} />
-      <Button
-        title="Change title of header"
-        onPress={() => navigation.setOptions({ title: "Changed the title" })}
-      />
     </View>
   );
 };
@@ -77,7 +73,7 @@ function OtherHomeScreen({ navigation }) {
       <Button
         title="Go to Detail Screen"
         onPress={() =>
-          navigation.navigate("Detail", {
+          navigation.navigate("Detail", params: {
             itemId: 21,
             itemContent: "This is some content for the detail screen",
             title: "Param title",

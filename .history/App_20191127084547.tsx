@@ -62,10 +62,6 @@ const DetailScreen = ({ navigation, route }) => {
       <Text>{itemId}</Text>
       <Text>{itemContent}</Text>
       <Button title="Force go back" onPress={() => navigation.popToTop()} />
-      <Button
-        title="Change title of header"
-        onPress={() => navigation.setOptions({ title: "Changed the title" })}
-      />
     </View>
   );
 };
