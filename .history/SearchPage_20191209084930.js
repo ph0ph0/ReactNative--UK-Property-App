@@ -19,10 +19,7 @@ const Description = styled.Text`
 `;
 
 const Container = styled.View`
-  padding-top: 30;
-  padding-bottom: 30;
-  padding-left: 30;
-  padding-right: 30;
+  padding: 30;
   margin-top: 65;
   align-items: center;
 `;
