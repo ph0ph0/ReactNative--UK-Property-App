@@ -32,7 +32,7 @@ const FlowRightLayout = styled.View`
 
 const Search = styled.TextInput`
   height: 36;
-  padding-top: 4;
+  padding-top: 400;
   padding-bottom: 4;
   padding-left: 4;
   padding-right: 4;

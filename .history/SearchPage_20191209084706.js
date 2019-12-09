@@ -25,17 +25,14 @@ const Container = styled.View`
 `;
 
 const FlowRightLayout = styled.View`
-  flex-direction: row;
-  align-items: center;
-  align-self: stretch;
+  flex-direction: "row";
+  align-items: "center";
+  align-self: "stretch";
 `;
 
 const Search = styled.TextInput`
   height: 36;
-  padding-top: 4;
-  padding-bottom: 4;
-  padding-left: 4;
-  padding-right: 4;
+  padding: 4;
   margin-right: 5;
   flex-grow: 1;
   font-size: 18;
