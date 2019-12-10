@@ -80,7 +80,7 @@ const SearchPage = () => {
     setSearchString(value);
   };
 
-  const executeQuery = query => {
+  const executeQuery = () => {
     setIsLoading(true);
     fetch(query)
       .then(response => response.json())

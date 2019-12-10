@@ -74,13 +74,13 @@ function urlForQueryAndPage(key, value, pageNumber) {
 const SearchPage = () => {
   const [searchString, setSearchString] = useState("london");
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("CUNT");
 
   const updateSearchString = value => {
     setSearchString(value);
   };
 
-  const executeQuery = query => {
+  const executeQuery = () => {
     setIsLoading(true);
     fetch(query)
       .then(response => response.json())

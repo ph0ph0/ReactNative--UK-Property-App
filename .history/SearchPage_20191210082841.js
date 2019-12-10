@@ -53,58 +53,12 @@ const HouseGraphic = styled.Image`
   height: 138;
 `;
 
-function urlForQueryAndPage(key, value, pageNumber) {
-  const data = {
-    country: "uk",
-    pretty: "1",
-    encoding: "json",
-    listing_type: "buy",
-    action: "search_listings",
-    page: pageNumber,
-  };
-  data[key] = value;
-
-  const querystring = Object.keys(data)
-    .map(key => key + "=" + encodeURIComponent(data[key]))
-    .join("&");
-
-  return "https://api.nestoria.co.uk/api?" + querystring;
-}
-
 const SearchPage = () => {
   const [searchString, setSearchString] = useState("london");
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState("");
 
   const updateSearchString = value => {
     setSearchString(value);
-  };
-
-  const executeQuery = query => {
-    setIsLoading(true);
-    fetch(query)
-      .then(response => response.json())
-      .then(json => handleResponse(json.response))
-      .catch(error => {
-        setIsLoading(false);
-        setMessage("Error: " + error);
-      });
-  };
-
-  const handleResponse = response => {
-    setIsLoading(false);
-    setMessage("");
-    if (response.application_response_code.substr(0, 1) === "1") {
-      console.log("Properties found: " + response.listings.length);
-      setMessage("Properties found: " + response.listings.length);
-    } else {
-      setMessage("Location not recognised");
-    }
-  };
-
-  const onSearchPressed = () => {
-    const query = urlForQueryAndPage("place_name", searchString, 1);
-    executeQuery(query);
   };
 
   return (
@@ -117,11 +71,9 @@ const SearchPage = () => {
           value={searchString}
           onChange={event => updateSearchString(event.nativeEvent.text)}
         />
-        <Button onPress={onSearchPressed} title="Go" />
+        <Button onPress={() => {}} title="Go" />
       </FlowRightLayout>
       <HouseGraphic source={require("./Resources/house.png")} />
-      {isLoading ? <ActivityIndicator size="large" /> : null}
-      <Description>{message}</Description>
     </Container>
   );
 };
