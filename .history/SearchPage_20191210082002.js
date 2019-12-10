@@ -56,8 +56,8 @@ const HouseGraphic = styled.Image`
 const SearchPage = () => {
   const [searchString, setSearchString] = useState("london");
 
-  const updateSearchString = value => {
-    setSearchString(value);
+  const updateSearchString = event => {
+    setSearchString(event.target.value);
   };
 
   return (
@@ -68,9 +68,9 @@ const SearchPage = () => {
         <Search
           placeholder={"Search via placename or postcode"}
           value={searchString}
-          onChange={event => updateSearchString(event.nativeEvent.text)}
+          onChange={}
         />
-        <Button onPress={() => {}} title="Go" />
+        <Button onPress={updateSearchString} title="Go" />
       </FlowRightLayout>
       <HouseGraphic source={require("./Resources/house.png")} />
     </Container>

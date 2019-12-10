@@ -57,6 +57,7 @@ const SearchPage = () => {
   const [searchString, setSearchString] = useState("london");
 
   const updateSearchString = value => {
+    window.log(`searchString changed: ${value}`);
     setSearchString(value);
   };
 
@@ -68,7 +69,7 @@ const SearchPage = () => {
         <Search
           placeholder={"Search via placename or postcode"}
           value={searchString}
-          onChange={event => updateSearchString(event.nativeEvent.text)}
+          onChange={event => updateSearchString(event.target.value)}
         />
         <Button onPress={() => {}} title="Go" />
       </FlowRightLayout>

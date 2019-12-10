@@ -57,18 +57,18 @@ const SearchPage = () => {
   const [searchString, setSearchString] = useState("london");
 
   const updateSearchString = value => {
+    window.log(`searchString changed: ${value}`);
     setSearchString(value);
   };
 
   return (
     <Container>
-      <Description>Search for houses to buy! {searchString}</Description>
+      <Description>Search for houses to buy!</Description>
       <Description>Search by place name or postcode</Description>
       <FlowRightLayout>
         <Search
           placeholder={"Search via placename or postcode"}
           value={searchString}
-          onChange={event => updateSearchString(event.nativeEvent.text)}
         />
         <Button onPress={() => {}} title="Go" />
       </FlowRightLayout>
