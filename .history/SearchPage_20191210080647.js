@@ -48,7 +48,7 @@ const Search = styled.TextInput`
   color: #48bbec;
 `;
 
-const HouseGraphic = styled.Image`
+const HouseGraphic = styled.image`
   width: 217;
   height: 138;
 `;
