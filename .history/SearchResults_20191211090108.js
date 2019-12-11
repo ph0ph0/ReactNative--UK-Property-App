@@ -39,11 +39,14 @@ const SearchResults = ({ navigation, route }) => {
   };
 
   return (
-    <FlatList
-      data={listings}
-      keyExtractor={keyExtractor}
-      renderItem={SearchResult}
-    />
+    <Container>
+      <Text>{listings}</Text>
+      <FlatList
+        data={listings}
+        keyExtractor={keyExtractor}
+        renderItem={SearchResult}
+      />
+    </Container>
   );
 };
 

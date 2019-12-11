@@ -16,34 +16,33 @@ const Container = styled.View`
   padding-right: 30;
   margin-top: 65;
   align-items: center;
-  background-color: orange;
+  background-color: black;
 `;
 
-const SRView = styled.View`
-  background-color: blue;
-`;
-
-const SearchResults = ({ navigation, route }) => {
-  const { listings } = route.params;
+const SearchResults = ({ ...props }) => {
+  const { listings } = props;
 
   const keyExtractor = (item, index) => index;
 
   const SearchResult = ({ item }) => {
     return (
       <TouchableHighlight underlayColor="#dddddd">
-        <SRView>
+        <View>
           <Text>{item.title}</Text>
-        </SRView>
+        </View>
       </TouchableHighlight>
     );
   };
 
   return (
-    <FlatList
-      data={listings}
-      keyExtractor={keyExtractor}
-      renderItem={SearchResult}
-    />
+    <Container>
+      <Text>{listings}</Text>
+      <FlatList
+        data={listings}
+        keyExtractor={keyExtractor}
+        renderItem={SearchResult}
+      />
+    </Container>
   );
 };
 
