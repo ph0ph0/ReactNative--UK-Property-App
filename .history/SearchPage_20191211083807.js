@@ -95,9 +95,7 @@ const SearchPage = () => {
     setIsLoading(false);
     setMessage("");
     if (response.application_response_code.substr(0, 1) === "1") {
-      navigation.navigate("SearchResults", {
-        listings: response.listings,
-      });
+      console.log("Properties found: " + response.listings.length);
       setMessage("Properties found: " + response.listings.length);
     } else {
       setMessage("Location not recognised");
