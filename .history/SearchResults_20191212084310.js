@@ -38,10 +38,8 @@ const RowContainer = styled.View`
   flex-direction: row;
   padding: 10;
 `;
-const SearchResult = ({ item, onPressItem, index }) => {
-  const onPress = () => {
-    onPressItem(index);
-  };
+const SearchResult = ({ item, price }) => {
+  const onPress = () => {};
 
   return (
     <TouchableHighlight onPress={onPress} underlayColor={"green"}>
@@ -49,7 +47,7 @@ const SearchResult = ({ item, onPressItem, index }) => {
         <RowContainer>
           <Thumbnail src={{ uri: item.img_url }} />
           <TextContainer>
-            <Price>{item.price}</Price>
+            <Price>{price}</Price>
             <Title numberOfLines={1}>{item.title}</Title>
           </TextContainer>
         </RowContainer>
@@ -64,19 +62,11 @@ const SearchResults = ({ navigation, route }) => {
 
   const keyExtractor = (item, index) => index;
 
-  const onPressItem = index => {
-    console.log(`Pressed row: ${index}`);
-  };
-
-  const renderSearchResult = (item, index) => {
-    <SearchResult item={item} index={index} onPressItem={onPressItem} />;
-  };
-
   return (
     <FlatList
       data={listings}
       keyExtractor={keyExtractor}
-      renderItem={renderSearchResult}
+      renderItem={SearchResult}
     />
   );
 };

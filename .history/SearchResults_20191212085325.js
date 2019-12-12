@@ -38,7 +38,7 @@ const RowContainer = styled.View`
   flex-direction: row;
   padding: 10;
 `;
-const SearchResult = ({ item, onPressItem, index }) => {
+const SearchResult = ({ item, price, onPressItem, index }) => {
   const onPress = () => {
     onPressItem(index);
   };
@@ -49,7 +49,7 @@ const SearchResult = ({ item, onPressItem, index }) => {
         <RowContainer>
           <Thumbnail src={{ uri: item.img_url }} />
           <TextContainer>
-            <Price>{item.price}</Price>
+            <Price>{price}</Price>
             <Title numberOfLines={1}>{item.title}</Title>
           </TextContainer>
         </RowContainer>
