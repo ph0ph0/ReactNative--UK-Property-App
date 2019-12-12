@@ -26,6 +26,7 @@ const Separator = styled.View`
 
 const Price = styled.Text`
   font-size: 25;
+  font-weight: "bold";
   color: #48bbec;
 `;
 const Title = styled.Text`

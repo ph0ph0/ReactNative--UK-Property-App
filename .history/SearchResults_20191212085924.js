@@ -26,6 +26,7 @@ const Separator = styled.View`
 
 const Price = styled.Text`
   font-size: 25;
+  font-weight: "bold";
   color: #48bbec;
 `;
 const Title = styled.Text`
@@ -35,10 +36,7 @@ const Title = styled.Text`
 
 const RowContainer = styled.View`
   flex-direction: row;
-  padding-top: 10;
-  padding-right: 10;
-  padding-bottom: 10;
-  padding-left: 10;
+  padding: 10;
 `;
 const SearchResult = ({ item, onPressItem, index }) => {
   const onPress = () => {
@@ -71,7 +69,9 @@ const SearchResults = ({ navigation, route }) => {
   };
 
   const renderSearchResult = (item, index) => {
-    return <SearchResult item={item} index={index} onPressItem={onPressItem} />;
+      return (
+        <SearchResult item={item} index={index} onPressItem={onPressItem} />;
+      )
   };
 
   return (
