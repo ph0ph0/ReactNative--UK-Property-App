@@ -45,8 +45,6 @@ const SearchResult = ({ item, onPressItem, index }) => {
     onPressItem(index);
   };
 
-  console.log(item.title);
-
   return (
     <TouchableHighlight onPress={onPress} underlayColor={"green"}>
       <View>
@@ -66,7 +64,7 @@ const SearchResult = ({ item, onPressItem, index }) => {
 const SearchResults = ({ navigation, route }) => {
   const { listings } = route.params;
 
-  const keyExtractor = (item, index) => `list-item-${index}`;
+  const keyExtractor = (item, index) => index;
 
   const onPressItem = index => {
     console.log(`Pressed row: ${index}`);

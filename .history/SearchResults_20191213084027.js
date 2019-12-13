@@ -45,8 +45,6 @@ const SearchResult = ({ item, onPressItem, index }) => {
     onPressItem(index);
   };
 
-  console.log(item.title);
-
   return (
     <TouchableHighlight onPress={onPress} underlayColor={"green"}>
       <View>
