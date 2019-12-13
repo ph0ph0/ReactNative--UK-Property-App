@@ -45,6 +45,8 @@ const SearchResult = ({ listing, onPressItem, index }) => {
     onPressItem(index);
   };
 
+  console.log(listing.title);
+
   return (
     <TouchableHighlight onPress={onPress} underlayColor={"green"}>
       <View>
@@ -64,29 +66,21 @@ const SearchResult = ({ listing, onPressItem, index }) => {
 const SearchResults = ({ navigation, route }) => {
   const { listings } = route.params;
 
-  listings.forEach(listing => {
-    console.log(listing.img_url);
-  });
-
   const keyExtractor = (item, index) => `list-item-${index}`;
 
   const onPressItem = index => {
     console.log(`Pressed row: ${index}`);
   };
 
+  const renderSearchResult = (listing, index) => {
+    return <SearchResult listing={listing} onPressItem={onPressItem} />;
+  };
+
   return (
     <FlatList
       data={listings}
       keyExtractor={keyExtractor}
-      renderItem={({ item, index }) => {
-        return (
-          <SearchResult
-            listing={item}
-            index={index}
-            onPressItem={onPressItem}
-          />
-        );
-      }}
+      renderItem={renderSearchResult}
     />
   );
 };

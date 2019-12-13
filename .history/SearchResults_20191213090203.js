@@ -40,7 +40,7 @@ const RowContainer = styled.View`
   padding-bottom: 10;
   padding-left: 10;
 `;
-const SearchResult = ({ listing, onPressItem, index }) => {
+const SearchResult = ({ cunt, onPressItem, index }) => {
   const onPress = () => {
     onPressItem(index);
   };
@@ -49,10 +49,10 @@ const SearchResult = ({ listing, onPressItem, index }) => {
     <TouchableHighlight onPress={onPress} underlayColor={"green"}>
       <View>
         <RowContainer>
-          <Thumbnail source={{ uri: listing.img_url }} />
+          <Thumbnail source={{ uri: cunt.img_url }} />
           <TextContainer>
-            <Price>{listing.price}</Price>
-            <Title numberOfLines={1}>{listing.title}</Title>
+            <Price>{cunt.price}</Price>
+            <Title numberOfLines={1}>{cunt.title}</Title>
           </TextContainer>
         </RowContainer>
         <Separator />
@@ -74,18 +74,17 @@ const SearchResults = ({ navigation, route }) => {
     console.log(`Pressed row: ${index}`);
   };
 
+  const renderSearchResult = ({ item, index }) => {
+    // console.log(index);
+    return <SearchResult item={item} index={index} onPressItem={onPressItem} />;
+  };
+
   return (
     <FlatList
       data={listings}
       keyExtractor={keyExtractor}
-      renderItem={({ item, index }) => {
-        return (
-          <SearchResult
-            listing={item}
-            index={index}
-            onPressItem={onPressItem}
-          />
-        );
+      renderItem={({ item }) => {
+        return <SearchResult listing={item} onPressItem={onPressItem} />;
       }}
     />
   );

@@ -74,6 +74,11 @@ const SearchResults = ({ navigation, route }) => {
     console.log(`Pressed row: ${index}`);
   };
 
+  const renderSearchResult = ({ item, index }) => {
+    // console.log(index);
+    return <SearchResult item={item} index={index} onPressItem={onPressItem} />;
+  };
+
   return (
     <FlatList
       data={listings}
