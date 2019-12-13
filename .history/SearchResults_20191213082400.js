@@ -47,11 +47,11 @@ const SearchResult = ({ item, onPressItem, index }) => {
 
   return (
     <TouchableHighlight onPress={onPress} underlayColor={"green"}>
+      <Text>CUNT</Text>
       <View>
         <RowContainer>
           <Thumbnail source={{ uri: item.img_url }} />
           <TextContainer>
-            <Text>CUNT</Text>
             <Price>{item.price}</Price>
             <Title numberOfLines={1}>{item.title}</Title>
           </TextContainer>
